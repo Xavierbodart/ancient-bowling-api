@@ -1,18 +1,21 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.playingsession;
 
 
+import be.telemis.games.bowling.model.frame.FrameEntity;
+import be.telemis.games.bowling.model.game.AbstractBaseEntity;
+import be.telemis.games.bowling.model.game.GameEntity;
+import be.telemis.games.bowling.model.player.PlayerEntity;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "playing_sessions")
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class PlayingSessionEntity extends AbstractBaseEntity {
 
     @Id
@@ -36,7 +39,7 @@ public class PlayingSessionEntity extends AbstractBaseEntity {
     private PlayerEntity player;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "playingSession", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "playingSession", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<FrameEntity> frames = new ArrayList<>();
 
     public void addFrames(List<FrameEntity> frames) {

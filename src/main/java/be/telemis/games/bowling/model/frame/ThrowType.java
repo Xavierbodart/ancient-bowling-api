@@ -1,4 +1,4 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
 import lombok.Getter;
 

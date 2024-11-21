@@ -1,16 +1,17 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.player;
 
 
+import be.telemis.games.bowling.model.game.AbstractBaseEntity;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "players")
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class PlayerEntity extends AbstractBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +22,5 @@ public class PlayerEntity extends AbstractBaseEntity {
 
     @Column(name = "birthday")
     private Date birthday;
+
 }

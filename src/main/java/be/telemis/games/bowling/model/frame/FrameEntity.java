@@ -1,9 +1,15 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
 
+import be.telemis.games.bowling.model.game.AbstractBaseEntity;
+import be.telemis.games.bowling.model.playingsession.PlayingSessionEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -37,7 +43,7 @@ public class FrameEntity extends AbstractBaseEntity {
 
     @ToString.Exclude
     @OneToMany(mappedBy = "frame", cascade = CascadeType.ALL)
-    private List<ThrowEntity> frameThrows;
+    private List<ThrowEntity> frameThrows = new ArrayList<>();
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,5 +1,6 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
+import be.telemis.games.bowling.model.game.AbstractBaseCO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,5 +17,4 @@ public class FrameCO extends AbstractBaseCO {
     private int remainingPins;
     private Integer remainingBonusThrows;
     private List<ThrowCO> frameThrows;
-
 }

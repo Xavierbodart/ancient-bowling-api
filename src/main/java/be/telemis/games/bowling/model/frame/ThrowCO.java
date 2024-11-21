@@ -1,7 +1,10 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
+import be.telemis.games.bowling.model.game.AbstractBaseCO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -1,11 +1,11 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.playingsession;
 
 import lombok.Getter;
 
 @Getter
 public enum PlayingSessionStatus {
     INITIALIZED,
+    IN_PROGRESS,
     ACTIVE,
-    WAITING,
     FINISHED;
 }

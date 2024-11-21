@@ -1,16 +1,21 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
 
+import be.telemis.games.bowling.model.game.AbstractBaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "throws")
 @Data
-public class ThrowEntity {
+@EqualsAndHashCode(callSuper = true)
+public class ThrowEntity extends AbstractBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -26,4 +31,5 @@ public class ThrowEntity {
 
     @Column(name = "pins_knocked")
     private int pinsKnocked;
+
 }

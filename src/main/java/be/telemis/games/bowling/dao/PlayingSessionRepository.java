@@ -1,6 +1,6 @@
 package be.telemis.games.bowling.dao;
 
-import be.telemis.games.bowling.model.game.PlayingSessionEntity;
+import be.telemis.games.bowling.model.playingsession.PlayingSessionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

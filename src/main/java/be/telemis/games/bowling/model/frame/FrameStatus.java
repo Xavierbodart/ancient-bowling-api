@@ -1,4 +1,4 @@
-package be.telemis.games.bowling.model.game;
+package be.telemis.games.bowling.model.frame;
 
 import lombok.Getter;
 
@@ -6,5 +6,6 @@ import lombok.Getter;
 public enum FrameStatus {
     CREATED,
     COMPLETED,
+    EXTENDED,
     CLOSED;
 }

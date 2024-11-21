@@ -1,10 +1,8 @@
 package be.telemis.games.bowling.mapper;
 
 
-import be.telemis.games.bowling.model.game.FrameCO;
-import be.telemis.games.bowling.model.game.FrameEntity;
-import be.telemis.games.bowling.model.game.PlayingSessionCO;
-import be.telemis.games.bowling.model.game.PlayingSessionEntity;
+import be.telemis.games.bowling.model.frame.FrameCO;
+import be.telemis.games.bowling.model.frame.FrameEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 

@@ -1,9 +1,8 @@
 package be.telemis.games.bowling.service;
 
 import be.telemis.games.bowling.dao.PlayerRepository;
-import be.telemis.games.bowling.mapper.PlayerMapper;
-import be.telemis.games.bowling.model.game.PlayerCO;
-import be.telemis.games.bowling.model.game.PlayerEntity;
+import be.telemis.games.bowling.model.player.PlayerEntity;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -18,15 +17,24 @@ public class PlayerService {
     private static final Logger logger = LoggerFactory.getLogger(PlayerService.class);
 
     private final PlayerRepository playerRepository;
-    private final PlayerMapper playerMapper;
 
-    public PlayerCO createPlayer(PlayerCO playerCO) {
-        final PlayerEntity playerEntity = playerMapper.mapFromCO(playerCO);
-        return playerMapper.mapToCO(playerRepository.save(playerEntity));
+    public PlayerEntity createPlayer(PlayerEntity playerEntity) {
+        playerEntity.setId(null);
+        if (playerRepository.findByName(playerEntity.getName()).isPresent()) {
+            throw new EntityExistsException("This player already exists");
+        }
+        return playerRepository.save(playerEntity);
     }
 
-    public PlayerCO getPlayer(Integer playerId) {
-        return playerMapper.mapToCO(playerRepository.findById(playerId)
-                .orElseThrow(() -> new EntityNotFoundException("Player not found with id: " + playerId)));
+    public PlayerEntity updatePlayer(Integer playerId, PlayerEntity playerEntity) {
+        if (!playerRepository.existsById(playerId)) {
+            throw new EntityExistsException("This player already exists");
+        }
+        return playerRepository.save(playerEntity);
+    }
+
+    public PlayerEntity getPlayer(Integer playerId) {
+        return playerRepository.findById(playerId)
+                .orElseThrow(() -> new EntityNotFoundException("Player not found with id: " + playerId));
     }
 }
