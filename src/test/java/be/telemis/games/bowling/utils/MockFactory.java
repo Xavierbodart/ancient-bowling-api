@@ -1,6 +1,5 @@
 package be.telemis.games.bowling.utils;
 
-import be.telemis.games.bowling.factory.FrameEntityFactory;
 import be.telemis.games.bowling.model.frame.ThrowEntity;
 import be.telemis.games.bowling.model.game.GameEntity;
 import be.telemis.games.bowling.model.game.GameStatus;
@@ -9,7 +8,6 @@ import be.telemis.games.bowling.model.playingsession.PlayingSessionEntity;
 import be.telemis.games.bowling.model.playingsession.PlayingSessionStatus;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class MockFactory {

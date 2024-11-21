@@ -3,9 +3,9 @@ package be.telemis.games.bowling.model.game;
 
 import be.telemis.games.bowling.model.playingsession.PlayingSessionEntity;
 import jakarta.persistence.*;
-import lombok.*;
-
-import java.util.Date;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Entity
 @Table(name = "games")

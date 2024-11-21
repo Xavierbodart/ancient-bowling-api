@@ -4,12 +4,11 @@ package be.telemis.games.bowling.model.frame;
 import be.telemis.games.bowling.model.game.AbstractBaseEntity;
 import be.telemis.games.bowling.model.playingsession.PlayingSessionEntity;
 import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity

@@ -4,8 +4,6 @@ import be.telemis.games.bowling.model.playingsession.PlayingSessionSummaryCO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.Date;
-
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class GameCO extends AbstractBaseCO {

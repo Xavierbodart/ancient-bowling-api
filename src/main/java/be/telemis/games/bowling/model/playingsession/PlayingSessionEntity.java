@@ -6,10 +6,11 @@ import be.telemis.games.bowling.model.game.AbstractBaseEntity;
 import be.telemis.games.bowling.model.game.GameEntity;
 import be.telemis.games.bowling.model.player.PlayerEntity;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
